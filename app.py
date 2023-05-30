@@ -15,6 +15,7 @@ def vacation_getter():
   	group_children = request.args.get('group_children')
   	return get_best_cities(checkin_date, checkout_date, group_adults, group_children), 200
   except Exception as e:
+    print(e, "WTF")
     return str(e), 500
 
 if __name__ == "__main__":

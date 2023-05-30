@@ -2,13 +2,11 @@ from booking_getter import get_cheapest_hotels
 from weather_getter import get_weather_data
 import json
 
-cities = ['Amsterdam', 'Athens', 'Baku', 'Belfast', 'Belgrade', 'Berlin', 'Bern', 'Bratislava', 'Brussels',
-          'Bucharest', 'Budapest', 'Cardiff', 'Chișinău', 'Copenhagen', 'Dublin', 'Edinburgh', 'Helsinki', 'Kyiv', 'Lisbon',
-          'Ljubljana', 'London', 'Madrid', 'Minsk', 'Monaco', 'Moscow', 'Oslo', 'Paris', 'Podgorica',
-          'Prague', 'Pristina', 'Reykjavík', 'Riga', 'Rome', 'Sarajevo', 'Skopje', 'Sofia', 'Stockholm',
-          'Tallinn', 'Tbilisi', 'Tirana', 'Vaduz', 'Valletta', 'Vienna', 'Vilnius', 'Warsaw', 'Zagreb', 'Milan',
-          'Istanbul', 'Antalya', 'Barcelona', 'Venice', 'Florence', 'Munich', 'Heraklion', 'Cracow', 'Frankfurt', 'Nice',
-          'Porto', 'Rhodes']
+cities = ['Amsterdam', 'Athens', 'Belfast', 'Belgrade', 'Berlin', 'Bratislava', 'Brussels','Bucharest', 'Budapest', 'Chișinău', 
+          'Copenhagen', 'Dublin', 'Edinburgh', 'Helsinki', 'Lisbon', 'Ljubljana', 'London', 'Madrid', 'Monaco', 'Oslo', 'Paris', 
+          'Podgorica', 'Prague', 'Pristina', 'Reykjavík', 'Riga', 'Rome', 'Sarajevo', 'Skopje', 'Sofia', 'Stockholm',
+          'Tallinn', 'Tbilisi', 'Tirana', 'Vaduz', 'Valletta', 'Vienna', 'Vilnius', 'Warsaw', 'Zagreb', 'Milan', 'Barcelona', 'Venice', 
+          'Florence', 'Munich', 'Heraklion', 'Cracow', 'Frankfurt', 'Nice', 'Porto', 'Rhodes']
           
 def get_best_cities(checkin, checkout, group_adults, group_children):
     cities_weather_data = {}

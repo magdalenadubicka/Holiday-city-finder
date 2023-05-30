@@ -21,6 +21,7 @@ def get_api_weather(city, cities_geo_positions):
     daily_params = '&'.join(daily_params)
 
     url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&forecast_days=16&{hourly_params}&{daily_params}&timezone=auto"
+
     response = requests.get(url).json()
     
     return response
@@ -63,7 +64,7 @@ def get_weather_score(weather_data, hour_st_idx, max_feels_temp):
 def get_weather_data(city, checkin, checkout, cities_geo_positions):
     weather_data = get_api_weather(city, cities_geo_positions)
     normalize_data(weather_data)
-
+    dates1 = weather_data['daily']['time']
     for i, date in enumerate(weather_data['daily']['time']):
         if date == checkin:
             st_day = i

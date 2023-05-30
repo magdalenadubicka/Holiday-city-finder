@@ -56,11 +56,12 @@ def get_booking_response(url):
     return response.content
 
 def get_cheapest_hotels(city, checkin, checkout, group_adults, group_children = 0):
-    url = f'https://www.booking.com/searchresults.pl.html?ss={city}&checkin={checkin}&checkout={checkout}&group_adults={group_adults}&group_children={group_children}&order=price&selected_currency=EUR&nflt=privacy_type%3D3%3Bprivacy_type_no_date%3D3'
+    url = f'https://www.booking.com/searchresults.pl.html?ss={city}&checkin={checkin}&checkout={checkout}&group_adults={group_adults}&group_children={group_children}&order=price&selected_currency=EUR&nflt=review_score%3D59%3Brpt%3D1'
     
     booking_response = get_booking_response(url)
+    
     soup = BeautifulSoup(booking_response, 'html.parser')
-    objects = soup.find_all('div', {'class': 'a826ba81c4 fe821aea6c fa2f36ad22 afd256fc79 d08f526e0d ed11e24d01 ef9845d4b3 da89aeb942'})
+    objects = soup.find_all('div', {'class': 'a826ba81c4 fa2f36ad22 afd256fc79 d08f526e0d ed11e24d01 ef9845d4b3 da89aeb942'})
     
     cheapest_hotels_list = []
     for hotel_div in objects:
